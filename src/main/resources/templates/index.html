@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Upload CSV File</title>
+
+<!--Bootstrap 4-->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container py-5">
+		<div>
+			# Getting Started. Read Help.md <br> Go to localhost:8080 Upload
+			an excel file. Hit the below controller link to access the list of
+			users stored in the db. <br>
+			<p>You can use users.csv in resource folder for reference.
+				Considering time consideration , only have put junit tests. IT can
+				be added if req.</p>
+			PS : Have lombok installed on IDE, if need to debug.
+		</div>
+		<div class="row">
+			<div class="col-6 mx-auto">
+				<h1>Upload CSV File</h1>
+				<form method="POST" th:action="@{/upload-csv-file}"
+					enctype="multipart/form-data">
+					<div class="form-group mt-3">
+						<label for="file">Select a CSV file</label> <input type="file"
+							name="file" class="form-control-file" id="file" accept=".csv">
+					</div>
+					<button type="submit" class="btn btn-primary">Import Users</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
